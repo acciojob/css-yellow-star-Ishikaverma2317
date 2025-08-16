@@ -1,36 +1,22 @@
-/* Perfect 5-point star using clip-path */
-.star{
-  width: 160px;
-  height: 160px;
-  background: #ff0;           /* yellow */
+.star {
+  position: relative;
+  width: 0;
+  height: 0;
   margin: 60px;
-  /* five-point star path (symmetrical) */
-  clip-path: polygon(
-    50% 0%,
-    61% 35%,
-    98% 35%,
-    68% 57%,
-    79% 91%,
-    50% 70%,
-    21% 91%,
-    32% 57%,
-    2% 35%,
-    39% 35%
-  );
-  -webkit-clip-path: polygon(
-    50% 0%,
-    61% 35%,
-    98% 35%,
-    68% 57%,
-    79% 91%,
-    50% 70%,
-    21% 91%,
-    32% 57%,
-    2% 35%,
-    39% 35%
-  );
+  border-left: 80px solid transparent;
+  border-right: 80px solid transparent;
+  border-bottom: 140px solid yellow;
 }
 
-/* Optional: remove body margins so it matches preview area tightly */
-html, body { margin: 0; padding: 0; }
+.star:after {
+  content: "";
+  position: absolute;
+  top: 40px;
+  left: -80px;
+  width: 0;
+  height: 0;
+  border-left: 80px solid transparent;
+  border-right: 80px solid transparent;
+  border-top: 140px solid yellow;
+}
 
